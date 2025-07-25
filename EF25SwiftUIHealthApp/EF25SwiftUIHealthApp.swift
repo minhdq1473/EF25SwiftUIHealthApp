@@ -8,10 +8,12 @@
 import SwiftUI
 
 @main
-struct EF25SwiftUIHealthAppApp: App {
+struct EF25SwiftUIHealthApp: App {
+//    @StateObject private var settingManager = SettingManager()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SettingsView()
+//                .environmentObject(settingManager)
         }
     }
 }
