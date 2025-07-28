@@ -26,31 +26,20 @@ struct LogView: View {
                 }
                 .navigationBarTitleDisplayMode(.inline)
         }
-        
-        
-        
     }
+    
     private var mainView: some View {
         VStack {
-//            Text("Information")
-//                .font(.system(size: 20, weight: .bold))
-//                .foregroundStyle(.neutral1)
-//                .padding(.bottom, 12)
-            
             HStack(spacing: 12) {
                 InputView(input: $pulse, label: "Pulse", placeholder: "Enter your pulse")
                 InputView(input: $hrv, label: "HRV", placeholder: "Enter your HRV")
             }
-            
             Spacer()
             
-            Button(action: {
+            ButtonView(buttonAction: {
                 addStat()
                 dismiss()
-            }) {
-                buttonView
-                    .padding(.bottom, 16)
-            }
+            }, buttonTitle: "Add", isEnable: isValidInput)
         }
         .padding(.top, 24)
         .padding(.horizontal, 16)
@@ -61,21 +50,21 @@ struct LogView: View {
         Button(action: {
             dismiss()
         }) {
-            Image(systemName: "xmark")
-                .foregroundColor(.neutral2)
+            Image("icClose")
         }
         
     }
-    
-    private var buttonView: some View {
-        ButtonView(buttonTitle: "Add", isEnable: !pulse.isEmpty && !hrv.isEmpty)
-        }
     
     private func addStat() {
         guard let pulseValue = Int(pulse), let hrvValue = Int(hrv) else {return}
         
         let newStat = ReportStat(pulse: pulseValue, hrv: hrvValue)
         report.append(newStat)
+    }
+    
+    private var isValidInput: Bool {
+        guard let pulseValue = Int(pulse), let hrvValue = Int(hrv) else {return false}
+        return !pulse.isEmpty && !hrv.isEmpty && (0...200).contains(pulseValue) && (0...200).contains(hrvValue)
     }
     
     

@@ -9,11 +9,17 @@ import SwiftUI
 
 @main
 struct EF25SwiftUIHealthApp: App {
-//    @StateObject private var settingManager = SettingManager()
+    
     var body: some Scene {
         WindowGroup {
-            SettingsView()
-//                .environmentObject(settingManager)
+            if UserDefaults.standard.bool(forKey: "hasCompletedIntro") {
+                HomeView()
+            } else {
+                IntroView()
+            }
         }
     }
+}
+#Preview {
+    IntroView()
 }

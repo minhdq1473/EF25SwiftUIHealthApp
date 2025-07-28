@@ -18,11 +18,11 @@ struct ReportStatView: View {
             Text(label)
                 .font(.system(size: 14, weight: .medium))
                 .foregroundStyle(.neutral3)
-                .multilineTextAlignment(.leading)
             HStack(spacing: 4) {
                 Text(value)
                     .font(.system(size: 18, weight: .bold))
                     .foregroundStyle(color)
+
                 Text(unit)
                     .font(.system(size: 16, weight: .medium))
                     .foregroundStyle(color)
@@ -34,6 +34,6 @@ struct ReportStatView: View {
 }
 
 #Preview {
-    ReportListView(report: .constant([ReportStat(pulse: 12, hrv: 12), ReportStat(pulse: 122, hrv: 12)
+    ReportListView(report: .constant([ReportStat(pulse: 12, hrv: 12), ReportStat(pulse: 122, hrv: 122)
                                      ]))
 }

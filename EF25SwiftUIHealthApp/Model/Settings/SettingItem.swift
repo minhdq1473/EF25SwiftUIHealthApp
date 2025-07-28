@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum SettingItem: String, Codable, CaseIterable {
+enum SettingItem: String, CaseIterable {
     case profile = "Profile",
          dailyRememer = "Daily Rememer",
          changeIc = "Change App Icon",

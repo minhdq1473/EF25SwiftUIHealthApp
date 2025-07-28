@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct SettingItemView: View {
-    var item: SettingItem
+    let item: SettingItem
 
     var body: some View {
         HStack(spacing: 12) {
@@ -18,13 +18,13 @@ struct SettingItemView: View {
             Spacer()
             Image(.right)
         }
-        .padding(.vertical, 7)
+        .padding()
         .background(.neutral5)
     }
 }
 
 #Preview {
-    SettingItemView(item: .allCases[0])
+    SettingItemView(item: .profile)
 }
 
 //#Preview {

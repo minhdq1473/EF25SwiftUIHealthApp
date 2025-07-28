@@ -7,57 +7,9 @@
 import SwiftUI
 
 struct ProfileView: View {
-//    let profile: Profile
-//    @Environment(\.dismiss) private var dismiss
-//    @State var showEditView : Bool = false
     @EnvironmentObject private var settingManager: SettingManager
     
     var body: some View {
-//        NavigationStack {
-//            mainView
-//                .navigationBarTitleDisplayMode(.inline)
-//                .navigationBarBackButtonHidden(true)
-//                .background(Color.background)
-//                .toolbar {
-//                    ToolbarItem(placement: .principal) {
-//                        NavigationTitleView(title: "Profile")
-//                    }
-//                    ToolbarItem(placement: .topBarLeading) {
-//                        Button(action: {
-//                            settingManager.popToRoot()
-//                        }) {
-//                            Image(systemName: "chevron.backward")
-//                                .foregroundColor(.neutral2)
-//                        }
-//                    }
-//                    
-//                    ToolbarItem(placement: .topBarTrailing) {
-////                        NavigationLink(destination: InformationView(profile: $profile)) {
-////                            Text("Edit")
-////                                .font(.system(size: 16, weight: .semibold))
-////                                .foregroundStyle(.primary1)
-////                        }
-////                        NavigationLink(value: "InformationView") {
-////                            Text("Edit")
-////                                .font(.system(size: 16, weight: .semibold))
-////                                .foregroundStyle(.primary1)
-////                        }
-//                        Button(action: {
-//                            settingManager.push(to: "InformationView")
-//                        }) {
-//                            Text("Edit")
-//                                .font(.system(size: 16, weight: .semibold))
-//                                .foregroundStyle(.primary1)
-//                        }
-//                    }
-//                }
-//                .navigationDestination(item: $profileItem) { profile in
-//                    InformationView(profile: profile)
-//                }
-//                .sheet(isPresented: $showEditView) {
-        //                    InformationView(profile: $profile)
-        //                }
-        //        }
         mainView
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
@@ -70,8 +22,7 @@ struct ProfileView: View {
                     Button(action: {
                         settingManager.popToRoot()
                     }) {
-                        Image(systemName: "chevron.backward")
-                            .foregroundColor(.neutral2)
+                        Image("icLeft")
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
@@ -85,15 +36,13 @@ struct ProfileView: View {
                 }
             }
     }
+    
     private var mainView: some View {
         VStack(spacing: 28) {
             if let profile = settingManager.profile {
                 view1(profile: profile)
                 view2(profile: profile)
             }
-//            view1
-//            view2
-    
             Spacer()
         }
         .padding(.top, 24)
@@ -114,6 +63,7 @@ struct ProfileView: View {
                 .foregroundColor(.neutral15)
         }
     }
+    
     private func view2(profile: Profile) -> some View {
         VStack(spacing: 12) {
             VStack(spacing: 12) {
@@ -123,6 +73,7 @@ struct ProfileView: View {
                 Text("\(profile.bmi, specifier: "%.1f")")
                     .font(.system(size: 64, weight: .bold))
                     .foregroundColor(.good)
+                    .lineLimit(1)
             }
             Divider()
                 .padding(.horizontal)

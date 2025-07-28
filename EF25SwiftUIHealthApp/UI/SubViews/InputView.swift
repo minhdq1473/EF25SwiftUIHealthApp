@@ -18,13 +18,14 @@ struct InputView: View {
                 .font(.system(size: 16, weight: .medium))
                 .padding(.bottom, 12)
                 .foregroundColor(.neutral15)
-            TextField(placeholder, text: .init(get: {
-                input
-            }, set: { newValue in
-                if Int(newValue) != nil {
-                    input = newValue
-                }
-            }))
+            TextField(placeholder, text: $input)
+//            TextField(placeholder, text: .init(get: {
+//                input
+//            }, set: { newValue in
+//                if Int(newValue) != nil {
+//                    input = newValue
+//                }
+//            }))
                 .font(.system(size: 16, weight: .regular))
                 .padding(12)
                 .frame(maxWidth: .infinity, maxHeight: 52)

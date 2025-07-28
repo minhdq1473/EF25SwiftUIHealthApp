@@ -24,11 +24,6 @@ class SettingManager: ObservableObject {
     @Published var profile: Profile?
     @Published var navigationPath = NavigationPath() 
     private var routes: [RoutingTag] = []
-//    func initialProfile() {
-//        if profile == nil {
-//            profile = Profile(firstName: "", lastName: "", gender: .male, weight: 0.0, height: 0.0)
-//        }
-//    }
     
     func push(to id: RoutingTag) {
         routes.append(id)

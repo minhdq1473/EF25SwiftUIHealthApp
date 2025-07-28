@@ -5,8 +5,8 @@
 //  Created by iKame Elite Fresher 2025 on 25/7/25.
 //
 import SwiftUI
-struct IntroItemView: View {
-    var item: IntroConcern
+struct IntroConcernView: View {
+    var concern: IntroConcern
     var isSelected: Bool
     
     var body: some View {
@@ -17,18 +17,14 @@ struct IntroItemView: View {
             .padding(.leading, 16)
             .padding(.top, 16)
             
-            Image(item.imageName)
+            Image(concern.imageName)
                 .frame(maxWidth: .infinity)
                 .padding(.top, 8)
             //                .resizable()
             //                    .frame(maxWidth: 64, maxHeight: 64, alignment: .center)
             Spacer()
-            Text(item.rawValue)
-                .padding(.leading, 16)
-                .padding(.bottom, 16)
-                .font(.system(size: 18, weight: .regular))
-                .frame(alignment: .leading)
-                .lineLimit(2)
+            ItemTextView(title: concern.rawValue)
+
             
         
         }

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum IntroIssue: String {
+enum IntroConcern: String, CaseIterable, Codable {
     case  heartRate = "Heart Rate",
           highBlood = "High Blood Pressure",
           stress = "Stress & Anxiety",
@@ -27,7 +27,7 @@ enum IntroIssue: String {
         }
     }
 }
-enum IntroAchieve: String {
+enum IntroTarget: String, CaseIterable, Codable {
     case  improveHeartHealth = "Improve Heart Health",
           improveBPHealth = "Improve Blood Pressure Health",
           reduceStress = "Reduce Stress",
@@ -47,7 +47,7 @@ enum IntroAchieve: String {
     }
 }
 
-enum IntroPlan: String {
+enum IntroPlan: String, CaseIterable, Codable {
     case  educationPlan = "Education Plan",
           exercisePlan = "Exercise Plan",
           healthTest = "Health Tests"

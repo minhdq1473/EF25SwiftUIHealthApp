@@ -24,12 +24,8 @@ struct IntroTargetView: View {
             
             Spacer()
             
-            Text(target.rawValue)
-                .padding(.leading, 16)
-                .padding(.bottom, 16)
-                .font(.system(size: 18, weight: .regular))
-                .frame(alignment: .leading)
-                .lineLimit(2)
+            ItemTextView(title: target.rawValue)
+            
         }
         .frame(width: (UIScreen.main.bounds.width - 48) / 2, height: 195)
         .background(Color.neutral5)

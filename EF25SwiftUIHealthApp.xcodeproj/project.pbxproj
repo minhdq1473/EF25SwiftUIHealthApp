@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C4006B62E2B8BFD00366718 /* IntroItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4006B52E2B8BF700366718 /* IntroItemView.swift */; };
+		2C38509E2E346146004F7F80 /* TabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38509D2E346142004F7F80 /* TabManager.swift */; };
+		2C3850A02E346C24004F7F80 /* HomeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38509F2E346C1C004F7F80 /* HomeTitleView.swift */; };
+		2C3850A22E36272F004F7F80 /* ItemTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3850A12E36271F004F7F80 /* ItemTextView.swift */; };
+		2C3850A52E366C1D004F7F80 /* RoundedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3850A42E366C14004F7F80 /* RoundedTabBar.swift */; };
 		2C4006B92E2B8CF100366718 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4006B82E2B8CE400366718 /* Profile.swift */; };
 		2C4006C02E2B906500366718 /* IntroItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4006BF2E2B8FFC00366718 /* IntroItem.swift */; };
+		2C680CB22E337274004E6F34 /* IntroConcernView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C680CB12E337245004E6F34 /* IntroConcernView.swift */; };
+		2C680CB42E3372A2004E6F34 /* IntroTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C680CB32E337292004E6F34 /* IntroTargetView.swift */; };
+		2C680CB62E3372A9004E6F34 /* IntroPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C680CB52E3372A5004E6F34 /* IntroPlanView.swift */; };
+		2C680CB82E3397D5004E6F34 /* OnboardingTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C680CB72E3397BC004E6F34 /* OnboardingTitleView.swift */; };
 		2C96E5912E2A05E300DE72FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C96E58D2E2A05E300DE72FA /* Assets.xcassets */; };
 		2C96E5922E2A05E300DE72FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C96E58E2E2A05E300DE72FA /* ContentView.swift */; };
 		2C96E5932E2A05E300DE72FA /* EF25SwiftUIHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C96E58F2E2A05E300DE72FA /* EF25SwiftUIHealthApp.swift */; };
@@ -38,9 +45,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C4006B52E2B8BF700366718 /* IntroItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroItemView.swift; sourceTree = "<group>"; };
+		2C38509D2E346142004F7F80 /* TabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManager.swift; sourceTree = "<group>"; };
+		2C38509F2E346C1C004F7F80 /* HomeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTitleView.swift; sourceTree = "<group>"; };
+		2C3850A12E36271F004F7F80 /* ItemTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTextView.swift; sourceTree = "<group>"; };
+		2C3850A42E366C14004F7F80 /* RoundedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTabBar.swift; sourceTree = "<group>"; };
 		2C4006B82E2B8CE400366718 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		2C4006BF2E2B8FFC00366718 /* IntroItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroItem.swift; sourceTree = "<group>"; };
+		2C680CB12E337245004E6F34 /* IntroConcernView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroConcernView.swift; sourceTree = "<group>"; };
+		2C680CB32E337292004E6F34 /* IntroTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroTargetView.swift; sourceTree = "<group>"; };
+		2C680CB52E3372A5004E6F34 /* IntroPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPlanView.swift; sourceTree = "<group>"; };
+		2C680CB72E3397BC004E6F34 /* OnboardingTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTitleView.swift; sourceTree = "<group>"; };
 		2C96E57F2E2A05DD00DE72FA /* EF25SwiftUIHealthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EF25SwiftUIHealthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C96E58D2E2A05E300DE72FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C96E58E2E2A05E300DE72FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,8 +97,11 @@
 		2C4006B42E2B8A8700366718 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2C680CB92E339905004E6F34 /* SubViews */,
+				2C680CB52E3372A5004E6F34 /* IntroPlanView.swift */,
+				2C680CB32E337292004E6F34 /* IntroTargetView.swift */,
+				2C680CB12E337245004E6F34 /* IntroConcernView.swift */,
 				2CDF25402E2DE6C6009ADF69 /* OpeningView.swift */,
-				2C4006B52E2B8BF700366718 /* IntroItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -92,6 +109,7 @@
 		2C4006B72E2B8CCC00366718 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				2C38509D2E346142004F7F80 /* TabManager.swift */,
 				2CEF6E5C2E321FC500939CF9 /* SettingManager.swift */,
 			);
 			path = Manager;
@@ -104,6 +122,15 @@
 				2C4006BF2E2B8FFC00366718 /* IntroItem.swift */,
 			);
 			path = Intro;
+			sourceTree = "<group>";
+		};
+		2C680CB92E339905004E6F34 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				2C3850A12E36271F004F7F80 /* ItemTextView.swift */,
+				2C680CB72E3397BC004E6F34 /* OnboardingTitleView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		2C96E5762E2A05DD00DE72FA = {
@@ -224,6 +251,8 @@
 		2CB76F512E2D770800E50EA9 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				2C3850A42E366C14004F7F80 /* RoundedTabBar.swift */,
+				2C38509F2E346C1C004F7F80 /* HomeTitleView.swift */,
 				2CE0421F2E30E88D0078E8B8 /* NavigationTitleView.swift */,
 				2CB76F5A2E2D786200E50EA9 /* InputView.swift */,
 				2CDF25422E2DEDDB009ADF69 /* ButtonView.swift */,
@@ -365,12 +394,16 @@
 			files = (
 				2C96E5922E2A05E300DE72FA /* ContentView.swift in Sources */,
 				2C4006B92E2B8CF100366718 /* Profile.swift in Sources */,
+				2C680CB82E3397D5004E6F34 /* OnboardingTitleView.swift in Sources */,
 				2CDF25432E2DEDE0009ADF69 /* ButtonView.swift in Sources */,
+				2C680CB42E3372A2004E6F34 /* IntroTargetView.swift in Sources */,
 				2C96E59F2E2A3EC800DE72FA /* HomeView.swift in Sources */,
 				2CB76F5B2E2D786200E50EA9 /* InputView.swift in Sources */,
 				2CE042202E30E89B0078E8B8 /* NavigationTitleView.swift in Sources */,
-				2C4006B62E2B8BFD00366718 /* IntroItemView.swift in Sources */,
+				2C3850A02E346C24004F7F80 /* HomeTitleView.swift in Sources */,
+				2C3850A52E366C1D004F7F80 /* RoundedTabBar.swift in Sources */,
 				2CE0421E2E308E990078E8B8 /* ReportListView.swift in Sources */,
+				2C680CB22E337274004E6F34 /* IntroConcernView.swift in Sources */,
 				2CEF6E5D2E321FCA00939CF9 /* SettingManager.swift in Sources */,
 				2CDF25412E2DE6E5009ADF69 /* OpeningView.swift in Sources */,
 				2CDF25452E2E2027009ADF69 /* EmptyView.swift in Sources */,
@@ -380,6 +413,7 @@
 				2CB76F592E2D785800E50EA9 /* InfoView.swift in Sources */,
 				2CB7B0E62E2FEE9D003C7124 /* SettingItem.swift in Sources */,
 				2C96E5932E2A05E300DE72FA /* EF25SwiftUIHealthApp.swift in Sources */,
+				2C680CB62E3372A9004E6F34 /* IntroPlanView.swift in Sources */,
 				2C96E5A52E2A3F9A00DE72FA /* SettingsView.swift in Sources */,
 				2CB7B0E12E2FDD40003C7124 /* LogView.swift in Sources */,
 				2CDF25482E2E2466009ADF69 /* EmptyStatView.swift in Sources */,
@@ -387,7 +421,9 @@
 				2C96E59B2E2A3DA100DE72FA /* IntroView.swift in Sources */,
 				2CB76F562E2D782200E50EA9 /* InformationView.swift in Sources */,
 				2CB7B0DD2E2FCE7C003C7124 /* Test.swift in Sources */,
+				2C3850A22E36272F004F7F80 /* ItemTextView.swift in Sources */,
 				2CB7B0E82E2FF0B2003C7124 /* SettingItemView.swift in Sources */,
+				2C38509E2E346146004F7F80 /* TabManager.swift in Sources */,
 				2CB76F542E2D781B00E50EA9 /* ProfileView.swift in Sources */,
 				2CB76F4D2E2D6CDE00E50EA9 /* IntroTitle.swift in Sources */,
 			);

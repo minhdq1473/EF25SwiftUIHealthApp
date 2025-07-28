@@ -13,13 +13,16 @@ struct ReportListView: View {
         List(report, id: \.self) { reportStat in
             HStack(spacing: 13) {
                 Image("mini-heart")
-                //                    .padding(.leading, 12)
-                HStack(spacing: 27) {
+                HStack(spacing: 0) {
                     ReportStatView(label: "Pulse", value: String(reportStat.pulse), unit: "bpm", color: Color(reportStat.status.color))
-                    
+                        .frame(width: 90, alignment: .leading)
+
                     ReportStatView(label: "HRV", value: String(reportStat.hrv), unit: "bpm", color: Color(reportStat.status.color))
-                    
+                        .frame(width: 90, alignment: .leading)
+
                     ReportStatView(label: "Status", value: String(reportStat.status.rawValue), unit: "",  color: Color(reportStat.status.color))
+                        .frame(width: 76, alignment: .leading)
+
                 }
                 Spacer()
             }
@@ -41,6 +44,6 @@ struct ReportListView: View {
 }
 
 #Preview {
-    ReportListView(report: .constant([ReportStat(pulse: 12, hrv: 12), ReportStat(pulse: 121, hrv: 12)
+    ReportListView(report: .constant([ReportStat(pulse: 12, hrv: 12), ReportStat(pulse: 122, hrv: 122),ReportStat(pulse: 80, hrv: 80)
                                      ]))
 }

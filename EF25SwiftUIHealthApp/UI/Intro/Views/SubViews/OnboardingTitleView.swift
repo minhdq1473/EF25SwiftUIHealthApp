@@ -16,6 +16,6 @@ struct OnboardingTitleView: View {
             .padding(.top, 64)
             .padding(.bottom, 24)
             .padding(.horizontal, 17)
-            .multilineTextAlignment(.center)
+            .multilineTextAlignment(.leading)
     }
 }

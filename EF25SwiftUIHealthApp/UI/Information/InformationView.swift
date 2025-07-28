@@ -7,40 +7,41 @@
 
 import SwiftUI
 
-public struct InformationView: View {
-    //    @Binding var profile: Profile
+struct InformationView: View {
     @State private var firstName: String = ""
     @State private var lastName: String = ""
     @State private var selectedGender: Gender = .male
     @State private var height: String = ""
     @State private var weight: String = ""
-    //    @Environment(\.dismiss) private var dismiss
     @EnvironmentObject private var settingManager: SettingManager
-    //    let editingItem: Item?
-    //    private var isEditing: Bool {
-    //        editingItem != nil
-    //    }
+  
     
-    //    init(items: Binding<[Item]>, editingItem: Item? = nil) {
-    //        self._items = items
-    //        self.editingItem = editingItem
-    //
-    //        if let item = editingItem {
-    //            self._firstName = State(initialValue: item.firstName)
-    //            self._lastName = State(initialValue: item.lastName)
-    //            self._selectedGender = State(initialValue: item.gender)
-    //            self._weight = State(initialValue: String(item.weight))
-    //            self._height = State(initialValue: String(item.height))
-    //        } else {
-    //            self._firstName = State(initialValue: "")
-    //            self._lastName = State(initialValue: "")
-    //            self._selectedGender = State(initialValue: .male)
-    //            self._weight = State(initialValue: "")
-    //            self._height = State(initialValue: "")
-    //        }
-    //    }
+    var body: some View {
+        mainView
+            .padding(.horizontal, 15.5)
+            .padding(.top, 24)
+            .background(Color.background)
+            .navigationBarBackButtonHidden()
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Information")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    NavigationTitleView(title: "Information")
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                    settingManager.pop()
+                }) {
+                    Image("icLeft")
+                }
+            }
+        }
+        .onAppear {
+            loadProfile()
+        }
+    }
     
-    public var body: some View {
+    private var mainView: some View {
         VStack(spacing: 21) {
             HStack (spacing: 12) {
                 InputView(input: $firstName, label: "First name", placeholder: "Enter first name")
@@ -57,6 +58,7 @@ public struct InformationView: View {
                 }
                 .pickerStyle(.segmented)
             }
+            
             HStack (spacing: 12) {
                 InputView(input: $weight, label: "Weight", placeholder: "Kg")
                 InputView(input: $height, label: "Height", placeholder: "Cm")
@@ -64,46 +66,20 @@ public struct InformationView: View {
             
             Spacer()
             
-            Button(action: {
-                saveProfile()
-            }) {
-                ButtonView(buttonTitle: "Save", isEnable: !firstName.isEmpty && !lastName.isEmpty && !height.isEmpty && !weight.isEmpty)
-            }
-            
-        }
-        .padding(.horizontal, 15.5)
-        .padding(.top, 24)
-        .background(Color.background)
-        
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle("Information")
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                NavigationTitleView(title: "Information")
-            }
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    //                    dismiss()
-                    settingManager.pop()
-                }) {
-                    Image(systemName: "chevron.backward")
-                        .foregroundColor(.neutral2)
-                }
-            }
-        }
-        .onAppear {
-            loadProfile()
+            ButtonView(buttonAction: saveProfile, buttonTitle: "Save", isEnable: isValidInput)
         }
     }
+    
     private func loadProfile() {
         if let existingProfile = settingManager.profile {
             firstName = existingProfile.firstName
             lastName = existingProfile.lastName
             selectedGender = existingProfile.gender
-            weight = String(existingProfile.weight)
-            height = String(existingProfile.height)
+            weight = String(Int(existingProfile.weight))
+            height = String(Int(existingProfile.height))
         }
     }
+    
     private func saveProfile() {
         guard let weightValue = Double(weight),
               let heightValue = Double(height) else {return}
@@ -117,16 +93,16 @@ public struct InformationView: View {
         )
         settingManager.profile = newProfile
         settingManager.push(to: .profile)
-        //        dismiss()
+    }
+    
+    private var isValidInput: Bool {
+        guard let heightValue = Int(height), let weightValue = Int(weight) else {return false}
+        return !firstName.isEmpty && !lastName.isEmpty && !height.isEmpty && !weight.isEmpty && (0...300).contains(heightValue) && (0...400).contains(weightValue)
     }
 }
 
 #Preview {
-    //    InformationView(items: .constant([
-    //        Item(firstName: "Minh", lastName: "Do", gender: .male, weight: 65.0, height: 165.0)
-    //    ]), editingItem: nil)
     NavigationStack {
-        //            InformationView(profile: .constant(nil))
         InformationView()
             .environmentObject(SettingManager())
     }
