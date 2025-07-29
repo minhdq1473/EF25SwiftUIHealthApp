@@ -34,6 +34,7 @@
 		2CB7B0E12E2FDD40003C7124 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7B0E02E2FDCF5003C7124 /* LogView.swift */; };
 		2CB7B0E62E2FEE9D003C7124 /* SettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7B0E52E2FEE98003C7124 /* SettingItem.swift */; };
 		2CB7B0E82E2FF0B2003C7124 /* SettingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7B0E72E2FF0AE003C7124 /* SettingItemView.swift */; };
+		2CCDADA92E3875DE00D77B22 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCDADA82E3875DD00D77B22 /* TabItem.swift */; };
 		2CDF25412E2DE6E5009ADF69 /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF25402E2DE6C6009ADF69 /* OpeningView.swift */; };
 		2CDF25432E2DEDE0009ADF69 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF25422E2DEDDB009ADF69 /* ButtonView.swift */; };
 		2CDF25452E2E2027009ADF69 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF25442E2E1FD1009ADF69 /* EmptyView.swift */; };
@@ -73,6 +74,7 @@
 		2CB7B0E02E2FDCF5003C7124 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		2CB7B0E52E2FEE98003C7124 /* SettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItem.swift; sourceTree = "<group>"; };
 		2CB7B0E72E2FF0AE003C7124 /* SettingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemView.swift; sourceTree = "<group>"; };
+		2CCDADA82E3875DD00D77B22 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		2CDF25402E2DE6C6009ADF69 /* OpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
 		2CDF25422E2DEDDB009ADF69 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		2CDF25442E2E1FD1009ADF69 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		2C96E5962E2A061C00DE72FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2CCDADAA2E3875E100D77B22 /* Home */,
 				2CB7B0E32E2FEE81003C7124 /* Settings */,
 				2C4006BE2E2B8E2200366718 /* Intro */,
 				2CB7B0DF2E2FDAFD003C7124 /* Report */,
@@ -309,6 +312,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		2CCDADAA2E3875E100D77B22 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2CCDADA82E3875DD00D77B22 /* TabItem.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		2CDF25462E2E202C009ADF69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +419,7 @@
 				2CDF25412E2DE6E5009ADF69 /* OpeningView.swift in Sources */,
 				2CDF25452E2E2027009ADF69 /* EmptyView.swift in Sources */,
 				2C4006C02E2B906500366718 /* IntroItem.swift in Sources */,
+				2CCDADA92E3875DE00D77B22 /* TabItem.swift in Sources */,
 				2CB7B0DB2E2FC63D003C7124 /* ReportStat.swift in Sources */,
 				2CE0421C2E308D380078E8B8 /* ReportStatView.swift in Sources */,
 				2CB76F592E2D785800E50EA9 /* InfoView.swift in Sources */,

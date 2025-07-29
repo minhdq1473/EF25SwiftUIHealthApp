@@ -3,4 +3,22 @@
    uuid = "E7313528-5C46-48B4-8562-9170E0BDE31C"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DB1F1E15-610D-4F4D-88CF-3279E34EAE14"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EF25SwiftUIHealthApp/UI/Intro/IntroView.swift"
+            startingColumnNumber = "17"
+            endingColumnNumber = "28"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "tabView"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -14,12 +14,12 @@ struct IntroView: View {
     
     var body: some View {
         VStack() {
-//            if tabManager.hasCompletedOnboarding {
-//                HomeView()
-//            } else {
+            if tabManager.hasCompletedOnboarding {
+                HomeView()
+            } else {
                 tabView
                 continueButton
-//            }
+            }
         }
         .background(Color.background)
     }
@@ -32,6 +32,7 @@ struct IntroView: View {
             VStack {
                 OpeningView()
             }
+            .contentShape(Rectangle())
             .tag(0)
             .gesture(DragGesture())
 
@@ -53,6 +54,7 @@ struct IntroView: View {
                 Spacer()
                 
             }
+            .contentShape(Rectangle())
             .tag(1)
             .gesture(DragGesture())
 
@@ -74,6 +76,7 @@ struct IntroView: View {
                 Spacer()
             }
             .tag(2)
+            .contentShape(Rectangle())
             .gesture(DragGesture())
 
             
@@ -94,12 +97,14 @@ struct IntroView: View {
                 Spacer()
             }
             .tag(3)
+            .contentShape(Rectangle())
             .gesture(DragGesture())
 
         }
         
-//        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-        .tabViewStyle(.page)
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+//        .tabViewStyle(.page).
+        .animation(.default, value: tabManager.selectedTab)
     }
     private var continueButton: some View {
         ButtonView(buttonAction: {
