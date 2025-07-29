@@ -29,7 +29,7 @@ struct IntroView: View {
             get: {tabManager.selectedTab},
             set: {tabManager.updateIntroTab($0)}
         )) {
-            VStack {
+            ZStack {
                 OpeningView()
             }
             .contentShape(Rectangle())
@@ -40,18 +40,19 @@ struct IntroView: View {
             
             VStack {
                 OnboardingTitleView(title: IntroTitle.concern.rawValue)
-            
-                LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(IntroConcern.allCases, id: \.self) { item in
-                        IntroConcernView(concern: item, isSelected: tabManager.selectedConcerns.contains(item))
-                            .onTapGesture {
-                                tabManager.toggleConcern(item)
-                            }
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 16) {
+                        ForEach(IntroConcern.allCases, id: \.self) { item in
+                            IntroConcernView(concern: item, isSelected: tabManager.selectedConcerns.contains(item))
+                                .onTapGesture {
+                                    tabManager.toggleConcern(item)
+                                }
+                        }
                     }
+                    .padding(.top, 1)
+                    .padding(.horizontal)
+                    Spacer()
                 }
-                .padding(.horizontal)
-                
-                Spacer()
                 
             }
             .contentShape(Rectangle())
@@ -61,19 +62,20 @@ struct IntroView: View {
             
             VStack {
                 OnboardingTitleView(title: IntroTitle.target.rawValue)
-                
-                LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(IntroTarget.allCases, id: \.self) { item in
-                        IntroTargetView(target: item, isSelected: tabManager.selectedTargets.contains(item))
-                            .onTapGesture {
-                                tabManager.toggleTarget(item)
-                            }
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 16) {
+                        ForEach(IntroTarget.allCases, id: \.self) { item in
+                            IntroTargetView(target: item, isSelected: tabManager.selectedTargets.contains(item))
+                                .onTapGesture {
+                                    tabManager.toggleTarget(item)
+                                }
+                        }
+                        
                     }
-                    
+                    .padding(.top, 1)
+                    .padding(.horizontal)
+                    Spacer()
                 }
-                .padding(.horizontal)
-                
-                Spacer()
             }
             .tag(2)
             .contentShape(Rectangle())
@@ -82,19 +84,19 @@ struct IntroView: View {
             
             VStack {
                 OnboardingTitleView(title: IntroTitle.plan.rawValue)
-                
-                LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(IntroPlan.allCases, id: \.self) { item in
-                        IntroPlanView(plan: item, isSelected: tabManager.selectedPlans.contains(item))
-                            .onTapGesture {
-                                tabManager.togglePlan(item)
-                            }
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 16) {
+                        ForEach(IntroPlan.allCases, id: \.self) { item in
+                            IntroPlanView(plan: item, isSelected: tabManager.selectedPlans.contains(item))
+                                .onTapGesture {
+                                    tabManager.togglePlan(item)
+                                }
+                        }
                     }
-                    
+                    .padding(.top, 1)
+                    .padding(.horizontal)
+                    Spacer()
                 }
-                .padding(.horizontal)
-                
-                Spacer()
             }
             .tag(3)
             .contentShape(Rectangle())
@@ -103,7 +105,6 @@ struct IntroView: View {
         }
         
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-//        .tabViewStyle(.page).
         .animation(.default, value: tabManager.selectedTab)
     }
     private var continueButton: some View {

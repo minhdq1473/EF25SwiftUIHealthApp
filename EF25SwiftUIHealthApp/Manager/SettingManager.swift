@@ -22,7 +22,8 @@ enum RoutingTag: String, Hashable {
 
 class SettingManager: ObservableObject {
     @Published var profile: Profile?
-    @Published var navigationPath = NavigationPath() 
+    @Published var navigationPath = NavigationPath()
+//    @Published var isTabBarHidden: Bool = false
     private var routes: [RoutingTag] = []
     
     func push(to id: RoutingTag) {

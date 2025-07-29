@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @StateObject private var settingManager: SettingManager = .init()
     @State private var tag: RoutingTag?
+    @Binding var isTabBarVisible: Bool
 
     var body: some View {
         NavigationStack(path: $settingManager.navigationPath) {
@@ -24,16 +25,16 @@ struct SettingsView: View {
                 switch destination {
                 case .information:
                     InformationView()
-                        .toolbar(.hidden, for: .tabBar)
                 case .profile:
                     ProfileView()
-                        .toolbar(.hidden, for: .tabBar)
                 default:
-                    SettingsView()
+                    SettingsView(isTabBarVisible: $isTabBarVisible)
                 }
             }
+            .onAppear { isTabBarVisible = true }
         }
         .environmentObject(settingManager)
+        
     }
     
     var membershipLabel: some View {
@@ -54,6 +55,7 @@ struct SettingsView: View {
                 } else {
                     settingManager.push(to: .profile)
                 }
+                isTabBarVisible = false
             } label: {
                 SettingItemView(item: .profile)
             }
@@ -93,9 +95,9 @@ struct SettingsView: View {
     }
 }
 
-#Preview {
-    SettingsView()
-}
-#Preview {
-    HomeView()
-}
+//#Preview {
+//    SettingsView()
+//}
+//#Preview {
+//    HomeView()
+//}

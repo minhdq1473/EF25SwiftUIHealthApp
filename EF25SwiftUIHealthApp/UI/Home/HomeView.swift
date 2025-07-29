@@ -9,7 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var selectedTab = 0
-    
+    @State private var isTabBarVisible: Bool = true
+
     var body: some View {
 //        ZStack{
 //            TabView(selection: $selectedTab) {
@@ -45,16 +46,22 @@ struct HomeView: View {
 //        .accentColor(.primary1)
         //        .background(Color.background)
         let tabItems = TabItem.allCases
-        
-        VStack {
-            if selectedTab == 0 { ReportView() } else { SettingsView() }
-            
-            RoundedTabBar(selectedTab: $selectedTab, tabItems: tabItems)
-                .frame(height: 80)
-                .background(Color.neutral5)
-                .cornerRadius(20)
-                .shadow(color: Color.gray.opacity(0.2), radius: 20, x: 0, y: -4)
 
+        VStack {
+            if selectedTab == 0 {
+                ReportView()
+            } else {
+                SettingsView(isTabBarVisible: $isTabBarVisible)
+                    .onAppear { isTabBarVisible = true }
+//                    .onDisappear { isTabBarVisible = false }
+            }
+            if isTabBarVisible {
+                RoundedTabBar(selectedTab: $selectedTab, tabItems: tabItems)
+                    .frame(height: 80)
+                    .background(Color.neutral5)
+                    .cornerRadius(20)
+                    .shadow(color: Color.gray.opacity(0.2), radius: 20, x: 0, y: -4)
+            } 
         }
         .background(Color.background)
         .edgesIgnoringSafeArea(.bottom)
